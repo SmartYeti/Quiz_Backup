@@ -6,6 +6,7 @@ import 'package:quiz_app/core/enum/state_status.enum.dart';
 import 'package:quiz_app/core/global_widgets/snackbar.widget.dart';
 import 'package:quiz_app/core/utils/guard.dart';
 import 'package:quiz_app/features/domain/bloc/auth/auth_bloc.dart';
+import 'package:quiz_app/features/domain/bloc/quest/quest_bloc.dart';
 import 'package:quiz_app/features/domain/model/register_model.dart';
 import 'package:quiz_app/features/presentation/home.dart';
 
@@ -363,6 +364,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 BlocProvider<AuthBloc>(
                   create: (BuildContext context) => diContainer.authBloc,
                 ),
+                BlocProvider<QuestBloc>(
+                          create: (BuildContext context) =>
+                              diContainer.questBloc,
+                        ),
               ],
               child: HomePage(
                 authUserModel: state.authUserModel!,
